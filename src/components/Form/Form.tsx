@@ -22,6 +22,7 @@ export const Form = () => {
   };
   return (
     <form onSubmit={handleAddParticipant}>
+      <h2 className="text-blue-royal text-2xl text-center">Vamos começar!</h2>
       <input
         ref={inputParticipantRef}
         placeholder="Insira os nomes dos participantes"

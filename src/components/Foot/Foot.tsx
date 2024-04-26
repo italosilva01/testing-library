@@ -11,16 +11,16 @@ export const Foot = () => {
     navigate("/sorteio");
   };
   return (
-    <div className="flex items-center justify-around bg-white-cream pb-36">
+    <div className="flex flex-col items-center justify-around bg-white-cream pb-5 gap-6 md:flex-row md:pb-36 ">
       <button
-        className="w-80 h-20 flex items-center px-10 gap-5 border-2 border-b-8 border-gray-950 rounded bg-orange text-white-cream text-xl"
+        className=" w-36  h-20 flex items-center md:w-80 md:px-10 gap-5 border-2 border-b-8 border-gray-950 rounded bg-orange text-white-cream text-xl"
         disabled={buttonIsDisabled}
         onClick={handleClick}
       >
         <img
           src={playCircleOutline}
           alt="button for play"
-          className="text-white"
+          className="hidden md:block"
         />
         Iniciar brincadeira!
       </button>
