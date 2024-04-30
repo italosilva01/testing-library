@@ -1,13 +1,16 @@
 import { useNavigate } from "react-router-dom";
-import { useListParticipants } from "state/hook/useListParticipants";
+import { useListParticipants } from "hook/useListParticipants";
 import sacolas from "assets/sacolas.png";
 import playCircleOutline from "assets/play_circle_outline.png";
+import { useDraw } from "hook/useDraw";
 
 export const Foot = () => {
   const participants = useListParticipants();
   const buttonIsDisabled = participants.length < 3;
   const navigate = useNavigate();
+  const sort = useDraw();
   const handleClick = () => {
+    sort();
     navigate("/sorteio");
   };
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import { useListParticipants } from "state/hook/useListParticipants";
+import { useListParticipants } from "hook/useListParticipants";
 
 export const ListParticipants = () => {
   const participants: string[] = useListParticipants();

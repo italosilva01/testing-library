@@ -1,12 +1,12 @@
 import { render, screen } from "@testing-library/react";
 import { RecoilRoot } from "recoil";
 import { ListParticipants } from "./Listparticipants";
-import { useListParticipants } from "state/hook/useListParticipants";
+import { useListParticipants } from "hook/useListParticipants";
 const zero = 0;
 //mokando uma hook
 //aqui simula a utlização do hoook useListParticipants
 // Todo codigo que está sendo testado, caso use o useListParticipants, a função será simulada pelo jest.
-jest.mock("state/hook/useListParticipants", () => {
+jest.mock("hook/useListParticipants", () => {
   return {
     useListParticipants: jest.fn(),
   };

@@ -3,7 +3,7 @@
 exports[`The settings' page The page should be rendered correctly 1`] = `
 <div>
   <div
-    class="flex flex-col h-screen bg-blue-royal"
+    class="flex flex-col h-screen bg-blue-royal "
   >
     <header
       class="flex flex-col bg-blue-royal items-center md:px-24 md:flex-row md:justify-between"
@@ -30,10 +30,15 @@ exports[`The settings' page The page should be rendered correctly 1`] = `
       />
     </header>
     <div
-      class=" flex flex-1 bg-white-cream p-20 mt-n16 justify-center rounded-t-64px border-2 border-black"
+      class=" flex  flex-1 bg-white-cream mt-n16 justify-center rounded-t-64px border-t-2  p-20 border-black"
       role="container"
     >
       <form>
+        <h2
+          class="text-blue-royal text-2xl text-center"
+        >
+          Vamos começar!
+        </h2>
         <input
           placeholder="Insira os nomes dos participantes"
           value=""
@@ -47,12 +52,24 @@ exports[`The settings' page The page should be rendered correctly 1`] = `
         
       </form>
     </div>
-    <div>
+    <div
+      class="flex flex-col items-center justify-around bg-white-cream pb-5 gap-6 md:flex-row md:pb-36 "
+    >
       <button
+        class=" w-36  h-20 flex items-center md:w-80 md:px-10 gap-5 border-2 border-b-8 border-gray-950 rounded bg-orange text-white-cream text-xl"
         disabled=""
       >
+        <img
+          alt="button for play"
+          class="hidden md:block"
+          src="play_circle_outline.png"
+        />
         Iniciar brincadeira!
       </button>
+      <img
+        alt="fotos de duas bolsas"
+        src="sacolas.png"
+      />
     </div>
   </div>
 </div>

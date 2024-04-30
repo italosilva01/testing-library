@@ -1,17 +1,25 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { RecoilRoot } from "recoil";
 import { Foot } from "./Foot";
-import { useListParticipants } from "state/hook/useListParticipants";
+import { useListParticipants } from "hook/useListParticipants";
 
-jest.mock("state/hook/useListParticipants", () => {
+jest.mock("hook/useListParticipants", () => {
   return {
     useListParticipants: jest.fn(),
   };
 });
 const mockNavigate = jest.fn();
+const mockRaffle = jest.fn();
+
 jest.mock("react-router-dom", () => {
   return {
     useNavigate: () => mockNavigate,
+  };
+});
+
+jest.mock("hook/useDraw", () => {
+  return {
+    useDraw: () => mockRaffle,
   };
 });
 
@@ -61,5 +69,6 @@ describe("when there are sufficient participants in the list", () => {
 
     fireEvent.click(button);
     expect(mockNavigate).toHaveBeenCalled();
+    expect(mockRaffle).toHaveBeenCalledTimes(1);
   });
 });
