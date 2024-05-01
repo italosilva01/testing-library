@@ -14,14 +14,14 @@ jest.mock("hook/useResultDraw", () => {
     useResultDraw: jest.fn(),
   };
 });
+
 describe("In the page of Raffle", () => {
-  const participants = ["italo", "rodolfo", "aroldo", "natanael"];
+  const participants = ["italo", "rodolfo", "aroldo"];
 
   const resultDraw = new Map([
     ["italo", "rodolfo"],
     ["rodolfo", "aroldo"],
-    ["aroldo", "natanael"],
-    ["natanael", "italo"],
+    ["aroldo", "italo"],
   ]);
   beforeEach(() => {
     (useListParticipants as jest.Mock).mockReturnValue(participants);
@@ -38,7 +38,7 @@ describe("In the page of Raffle", () => {
     expect(options).toHaveLength(participants.length);
   });
 
-  test("The secret friend is shown on request ", () => {
+  test("The secret friend is shown on request", () => {
     render(
       <RecoilRoot>
         <Raffle />
@@ -50,9 +50,9 @@ describe("In the page of Raffle", () => {
     fireEvent.change(select, {
       target: { value: participants[0] },
     });
-
     const button = screen.getByRole("button");
     fireEvent.click(button);
+
     const secretFriend = screen.getByRole("alert");
 
     expect(secretFriend).toBeInTheDocument();

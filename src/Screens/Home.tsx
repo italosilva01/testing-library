@@ -6,7 +6,9 @@ import participante from "../assets/participante.png";
 import { Form } from "components/Form/Form";
 import { Card } from "components/Card/Card";
 import { Foot } from "components/Foot/Foot";
+import { useListParticipants } from "hook/useListParticipants";
 export const Home = () => {
+  const participants = useListParticipants();
   return (
     <div className="flex flex-col h-screen bg-blue-royal ">
       <header className="flex flex-col bg-blue-royal items-center md:px-24 md:flex-row md:justify-between">
@@ -35,6 +37,9 @@ export const Home = () => {
       <Card>
         <Form />
       </Card>
+      {participants.map((participant) => (
+        <p key={participant}>{participant}</p>
+      ))}
       <Foot />
     </div>
   );

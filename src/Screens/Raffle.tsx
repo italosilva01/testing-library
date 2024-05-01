@@ -1,6 +1,6 @@
 import { useListParticipants } from "hook/useListParticipants";
 import { useResultDraw } from "hook/useResultDraw";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Raffle = () => {
   const options = useListParticipants();
@@ -8,25 +8,23 @@ export const Raffle = () => {
   const [currentParticipant, setCurrentParticipant] = useState("");
   const [secretFriend, setSecretFriend] = useState("");
 
-  const raffle = (ev: React.FormEvent<HTMLSelectElement>) => {
+  const raffle = (ev: React.FormEvent<HTMLFormElement>) => {
     ev.preventDefault();
-    if (result.has(currentParticipant)) {
-      console.log("ASAI");
-      setSecretFriend(result.get(currentParticipant)!);
-    }
+    setSecretFriend(result.get(currentParticipant)!);
   };
 
   return (
     <section>
-      <form>
+      <form onSubmit={raffle}>
         <select
           required
           name="currentParticipant"
           id="currentParticipant"
           placeholder="Selecione o seu nome"
-          onSubmit={raffle}
           value={currentParticipant}
-          onChange={(e) => setCurrentParticipant(e.target.value)}
+          onChange={(e) => {
+            setCurrentParticipant(e.target.value);
+          }}
         >
           {options.map((item) => (
             <option value={item} key={item}>
@@ -34,9 +32,15 @@ export const Raffle = () => {
             </option>
           ))}
         </select>
+        <p>Clique em em sortear para ver quem é seu amigo secreto!</p>
+
         <button>Sortear</button>
       </form>
-      {secretFriend && <p role="alert">{secretFriend}</p>}
+      {secretFriend && (
+        <p className="resultado" role="alert">
+          {secretFriend}
+        </p>
+      )}
     </section>
   );
 };
