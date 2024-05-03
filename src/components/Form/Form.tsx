@@ -3,6 +3,7 @@ import { useAddParticipant } from "hook/useAddPaticipants";
 import { useMessageError } from "hook/useMessageError";
 
 import iconPerson from "../../assets/person_add.svg";
+import { Title } from "components/Title/Title";
 export const Form = () => {
   const initialValue = "";
   const [currentNameParticipant, setCurrentNameParticipant] =
@@ -22,9 +23,12 @@ export const Form = () => {
     setCurrentNameParticipant(initialValue);
   };
   return (
-    <form onSubmit={handleAddParticipant}>
-      <h2 className="text-blue-royal text-2xl text-center">Vamos começar!</h2>
-      <div className=" flex flex-col  w-80 gap-2 md:flex-row md:w-726 md:h-20 items-center ">
+    <form
+      onSubmit={handleAddParticipant}
+      className="flex flex-col  items-center"
+    >
+      <Title>Vamos começar!</Title>
+      <div className=" flex flex-col w-80 gap-2 md:flex-row md:w-726 md:h-20 items-center ">
         <label className="flex items-center  w-full h-12 border rounded-37px bg-white ">
           <span className="before:block before:absolute">
             <img src={iconPerson} alt="adicionar pessoal" />

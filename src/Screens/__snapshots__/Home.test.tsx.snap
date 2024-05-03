@@ -30,17 +30,19 @@ exports[`The settings' page The page should be rendered correctly 1`] = `
       />
     </header>
     <div
-      class=" flex  flex-1 bg-white-cream mt-n16 justify-center rounded-t-64px border-t-2  p-20 border-black"
+      class=" flex  flex-1 flex-col bg-white-cream mt-n16  rounded-t-64px border-t-2  p-20 border-black"
       role="container"
     >
-      <form>
+      <form
+        class="flex flex-col  items-center"
+      >
         <h2
           class="text-blue-royal text-2xl text-center"
         >
           Vamos começar!
         </h2>
         <div
-          class=" flex flex-col  w-80 gap-2 md:flex-row md:w-726 md:h-20 items-center "
+          class=" flex flex-col w-80 gap-2 md:flex-row md:w-726 md:h-20 items-center "
         >
           <label
             class="flex items-center  w-full h-12 border rounded-37px bg-white "
@@ -69,26 +71,28 @@ exports[`The settings' page The page should be rendered correctly 1`] = `
         </div>
         
       </form>
-    </div>
-    <div />
-    <div
-      class="flex flex-col items-center justify-around bg-white-cream pb-5 gap-6 md:flex-row md:pb-36 "
-    >
-      <button
-        class=" w-36  h-20 flex items-center md:w-80 md:px-10 gap-5 border-2 border-b-8 border-gray-950 rounded bg-orange text-white-cream text-xl"
-        disabled=""
-      >
-        <img
-          alt="button for play"
-          class="hidden md:block"
-          src="play_circle_outline.png"
-        />
-        Iniciar brincadeira!
-      </button>
-      <img
-        alt="fotos de duas bolsas"
-        src="sacolas.png"
+      <ul
+        class="flex flex-col  flex-1 bg-white-cream border-none items-center my-4"
       />
+      <div
+        class="flex flex-col items-center justify-around bg-white-cream pb-5 gap-6 md:flex-row md:pb-36 "
+      >
+        <button
+          class=" w-36  h-20 flex items-center md:w-80 md:px-10 gap-5 border-2 border-b-8 border-gray-950 rounded bg-orange text-white-cream text-xl"
+          disabled=""
+        >
+          <img
+            alt="button for play"
+            class="hidden md:block"
+            src="play_circle_outline.png"
+          />
+          Iniciar brincadeira!
+        </button>
+        <img
+          alt="fotos de duas bolsas"
+          src="sacolas.png"
+        />
+      </div>
     </div>
   </div>
 </div>

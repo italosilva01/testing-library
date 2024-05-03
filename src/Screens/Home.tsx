@@ -13,14 +13,13 @@ export const Home = () => {
       <Header />
       <Card>
         <Form />
+        <ul className="flex flex-col  flex-1 bg-white-cream border-none items-center my-4">
+          {participants.map((participant) => (
+            <li key={participant}>{participant}</li>
+          ))}
+        </ul>
+        <Foot />
       </Card>
-
-      <ul className="flex flex-col  flex-1 bg-white-cream border-none items-center">
-        {participants.map((participant) => (
-          <p key={participant}>{participant}</p>
-        ))}
-      </ul>
-      <Foot />
     </Content>
   );
 };

@@ -1,5 +1,8 @@
+import { Button } from "components/Button/Button";
+import { Card } from "components/Card/Card";
 import { Content } from "components/Content/Content";
 import { Header } from "components/Header/Header";
+import { Title } from "components/Title/Title";
 import { useListParticipants } from "hook/useListParticipants";
 import { useResultDraw } from "hook/useResultDraw";
 import { useState } from "react";
@@ -18,32 +21,38 @@ export const Raffle = () => {
   return (
     <Content>
       <Header />
-      <form onSubmit={raffle}>
-        <select
-          required
-          name="currentParticipant"
-          id="currentParticipant"
-          placeholder="Selecione o seu nome"
-          value={currentParticipant}
-          onChange={(e) => {
-            setCurrentParticipant(e.target.value);
-          }}
-        >
-          {options.map((item) => (
-            <option value={item} key={item}>
-              {item}
-            </option>
-          ))}
-        </select>
-        <p>Clique em em sortear para ver quem é seu amigo secreto!</p>
+      <Card>
+        <Title>Quem vai tirar o papelzinho?</Title>
+        <form onSubmit={raffle} className="flex flex-col items-center gap-8">
+          <select
+            required
+            name="currentParticipant"
+            id="currentParticipant"
+            placeholder="Selecione o seu nome"
+            value={currentParticipant}
+            onChange={(e) => {
+              setCurrentParticipant(e.target.value);
+            }}
+            className="w-full border-none overflow-hidden outline-none	rounded-37px placeholder:italic placeholder:indent-8 placeholder-opacity-30  h-12  bg-white border-2 border-gray-950"
+          >
+            {options.map((item) => (
+              <option value={item} key={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+          <p className="text-lg w-80 text-center	">
+            Clique em em sortear para ver quem é seu amigo secreto!
+          </p>
 
-        <button>Sortear</button>
-      </form>
-      {secretFriend && (
-        <p className="resultado" role="alert">
-          {secretFriend}
-        </p>
-      )}
+          <Button>Sortear</Button>
+          {secretFriend && (
+            <p className="resultado text-orange text-lg" role="alert">
+              {secretFriend}
+            </p>
+          )}
+        </form>
+      </Card>
     </Content>
   );
 };
