@@ -1,6 +1,8 @@
+import { Content } from "components/Content/Content";
+import { Header } from "components/Header/Header";
 import { useListParticipants } from "hook/useListParticipants";
 import { useResultDraw } from "hook/useResultDraw";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export const Raffle = () => {
   const options = useListParticipants();
@@ -14,7 +16,8 @@ export const Raffle = () => {
   };
 
   return (
-    <section>
+    <Content>
+      <Header />
       <form onSubmit={raffle}>
         <select
           required
@@ -41,6 +44,6 @@ export const Raffle = () => {
           {secretFriend}
         </p>
       )}
-    </section>
+    </Content>
   );
 };

@@ -7,10 +7,17 @@ module.exports = {
       "blue-royal": "#4B69FD",
       "white-cream": "#FFF9EB",
       orange: "#FE652B",
+      white: "#FFFFFF",
     },
-    extend: {},
+
+    extend: {
+      width: {
+        726: "726px",
+      },
+    },
     borderRadius: {
       "64px": "64px",
+      "37px": "37px",
     },
   },
   variants: {
