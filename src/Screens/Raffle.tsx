@@ -35,6 +35,7 @@ export const Raffle = () => {
             }}
             className="w-full border-none overflow-hidden outline-none	rounded-37px placeholder:italic placeholder:indent-8 placeholder-opacity-30  h-12  bg-white border-2 border-gray-950"
           >
+            <option value="Selecione seu nome">Selecione seu nome</option>
             {options.map((item) => (
               <option value={item} key={item}>
                 {item}

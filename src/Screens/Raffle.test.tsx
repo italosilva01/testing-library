@@ -35,7 +35,7 @@ describe("In the page of Raffle", () => {
     );
 
     const options = screen.queryAllByRole("option");
-    expect(options).toHaveLength(participants.length);
+    expect(options).toHaveLength(participants.length + 1);
   });
 
   test("The secret friend is shown on request", () => {

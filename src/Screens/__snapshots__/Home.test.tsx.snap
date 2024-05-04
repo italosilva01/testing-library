@@ -78,7 +78,7 @@ exports[`The settings' page The page should be rendered correctly 1`] = `
         class="flex flex-col items-center justify-around bg-white-cream pb-5 gap-6 md:flex-row md:pb-36 "
       >
         <button
-          class=" w-36  h-20 flex items-center md:w-80 md:px-10 gap-5 border-2 border-b-8 border-gray-950 rounded bg-orange text-white-cream text-xl"
+          class=" w-36  h-20 flex justify-center items-center md:w-80 md:px-10 gap-5 border-2 border-b-8 border-gray-950 rounded bg-orange text-white-cream text-xl"
           disabled=""
         >
           <img
