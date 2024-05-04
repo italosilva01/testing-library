@@ -6,6 +6,7 @@ import { Title } from "components/Title/Title";
 import { useListParticipants } from "hook/useListParticipants";
 import { useResultDraw } from "hook/useResultDraw";
 import { useState } from "react";
+import airplane from "../assets/airplane.svg";
 
 export const Raffle = () => {
   const options = useListParticipants();
@@ -16,6 +17,9 @@ export const Raffle = () => {
   const raffle = (ev: React.FormEvent<HTMLFormElement>) => {
     ev.preventDefault();
     setSecretFriend(result.get(currentParticipant)!);
+    setTimeout(() => {
+      setSecretFriend("");
+    }, 5000);
   };
 
   return (
@@ -33,7 +37,7 @@ export const Raffle = () => {
             onChange={(e) => {
               setCurrentParticipant(e.target.value);
             }}
-            className="w-full border-none overflow-hidden outline-none	rounded-37px placeholder:italic placeholder:indent-8 placeholder-opacity-30  h-12  bg-white border-2 border-gray-950"
+            className="w-full border-none overflow-hidden outline-none	rounded-37px placeholder:italic placeholder:indent-8 placeholder-opacity-30  h-12  bg-white border-2 border-orange"
           >
             <option value="Selecione seu nome">Selecione seu nome</option>
             {options.map((item) => (
@@ -53,6 +57,8 @@ export const Raffle = () => {
             </p>
           )}
         </form>
+
+        <img src={airplane} alt="" className="w-36 h-32 mx-auto" />
       </Card>
     </Content>
   );
