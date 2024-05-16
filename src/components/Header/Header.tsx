@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import smallLogo from "../../assets/logo-pequeno.png";
 
 import largeLogo from "../../assets/logo.png";
@@ -19,7 +20,7 @@ export const Header = () => {
         height={157}
         className="hidden md:block"
       />
-      <img
+      <ImageParticipant
         src={participante}
         alt="Desenho de um participante"
         width={328}
@@ -28,3 +29,6 @@ export const Header = () => {
     </header>
   );
 };
+const ImageParticipant = styled.img`
+  z-index: 100;
+`;

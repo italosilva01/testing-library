@@ -24,13 +24,14 @@ exports[`The settings' page The page should be rendered correctly 1`] = `
       />
       <img
         alt="Desenho de um participante"
+        class="sc-eDDOjk crwGOu"
         height="158"
         src="participante.png"
         width="328"
       />
     </header>
     <div
-      class=" flex  flex-1 flex-col bg-white-cream mt-n16  rounded-t-64px border-t-2  p-20 border-black"
+      class="sc-hLseSp hGgnu  flex  flex-1 flex-col bg-white-cream  rounded-t-64px border-t-2  p-20 border-black"
       role="container"
     >
       <form
@@ -42,10 +43,10 @@ exports[`The settings' page The page should be rendered correctly 1`] = `
           Vamos começar!
         </h2>
         <div
-          class=" flex flex-col w-80 gap-2 md:flex-row md:w-726 md:h-20 items-center "
+          class="sc-dmqGRC eecIDP  flex flex-col w-80 gap-2 md:flex-row md:w-726 md:h-20 items-center "
         >
           <label
-            class="flex items-center  w-full h-12 border rounded-37px bg-white "
+            class="sc-gueXAH jaLNE flex items-center  w-full h-12 border rounded-37px bg-white  md:rounded-t-lg"
           >
             <span
               class="before:block before:absolute"
@@ -56,13 +57,13 @@ exports[`The settings' page The page should be rendered correctly 1`] = `
               />
             </span>
             <input
-              class="w-full border-none overflow-hidden outline-none	rounded-37px placeholder:italic placeholder:indent-8 placeholder-opacity-30 "
+              class="w-full border-none overflow-hidden outline-none	rounded-37px placeholder:italic placeholder:indent-8 placeholder-opacity-30  "
               placeholder="Insira os nomes dos participantes"
               value=""
             />
           </label>
           <button
-            class="w-36 h-12 bg-black	border rounded-37px"
+            class="sc-beqWNU daCNNr w-36 h-12 bg-black	border rounded-37px"
             disabled=""
             type="submit"
           >
